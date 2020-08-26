@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>1614072 박영미 </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"/>
+  <link rel="stylesheet" href=".\css\maincss.css?ver=1" type="text/css"/>
+  <script language="Javascript" type="text/javascript">
+	var xdoc, xmldoc, rootNode, bnode;
+	var page_no, page_sum; 
+	
+	function createXMLDoc()
+	{
+		if (ActiveXObject) { 
+        xdoc = new   ActiveXObject("Msxml.DOMDocument");
+        xdoc.async = false;
+		return xdoc;
+		}
+	}
+	
+	function FileLoad(filename) 
+	{
+		//DOMDocument 객체 생성, 비동기적으로 로드하도록 셋팅, XML 문서 불러오기
+		xdoc = new ActiveXObject("Msxml.DOMDocument");
+		xdoc.async = false;
+		if (filename) xdoc.load(filename);
+		else xdoc.load("file://"+path.value);
+
+		//XML 문서 불러오는 도중에 파싱에러가 없었는지 체크
+		if (xdoc.parseError.errorCode != 0) {
+  		alert("파일을 메모리로 로드하는데 실패하였습니다 : " + xdoc.parseError.reason);
+		}
+
+		//현재 노드의 위치를 문서상의 루트 엘리먼트에 위치시킴
+		rootNode = xdoc.documentElement;
+		alert("[파일로드 성공] 루트 엘리먼트 : " + rootNode.nodeName);
+	}
+	
+
+	function FileLoad0() 
+	{
+		//DOMDocument 객체 생성, 비동기적으로 로드하도록 셋팅, XML 문서 불러오기
+		xdoc = new ActiveXObject("Msxml.DOMDocument");
+		xdoc.async = false;
+		//xdoc.preserveWhiteSpace = true;
+		xdoc.load('뉴스목록리스트.xml');
+
+		//XML 문서 불러오는 도중에 파싱에러가 없었는지 체크
+		if (xdoc.parseError.errorCode != 0) {
+  		alert("파일을 메모리로 로드하는데 실패하였습니다 : " + xdoc.parseError.reason);
+		}
+
+		//현재 노드의 위치를 문서상의 루트 엘리먼트에 위치시킴
+		rootNode = xdoc.documentElement;
+		alert("[파일로드 성공] 루트 엘리먼트 : " + rootNode.nodeName);
+		goList(0);
+	}
+	
+	function goList(num)
+	{
+	    page_sum = rootNode.childNodes.length;
+   
+		switch (num) 
+		{
+		case 0 : page_no=0; break;
+		case 1 : if (page_no > 0) page_no=page_no - 1; break;
+		case 2 : page_no=page_no + 1; 
+			if (page_no == page_sum) page_no=page_no-1;  break;
+		case 3 : page_no=page_sum-1; break;
+		}
+		
+		p_no.innerText=page_no+1;
+		p_sum.innerText=page_sum;
+		
+
+		bnode = rootNode.childNodes(page_no);
+		controls.b_id.value = bnode.getAttribute("per_id");
+		controls.b_title.value = bnode.childNodes(6).text;
+		controls.b_author.value = bnode.childNodes(2).text;
+		controls.b_company.value = bnode.childNodes(1).text;
+
+		controls.b_year.value =  bnode.childNodes(3).text;		
+		controls.b_month.value =  bnode.childNodes(4).text;
+		controls.b_day.value =  bnode.childNodes(5).text;
+
+		controls.b_theme.value = bnode.childNodes(0).text;	
+		controls.b_content.value = bnode.childNodes(7).text;
+		controls.b_source.value = bnode.childNodes(8).text;
+		controls.b_img.value = bnode.childNodes(9).text;
+
+		
+		resDiv2.innerText = bnode.xml;
+	}
+	
+	function newAppend()
+	{		
+		p_no.innerText='?';
+		p_sum.innerText=page_sum;
+
+		controls.b_id.value = '';
+		controls.b_title.value = '';
+		controls.b_author.value = '';
+		controls.b_company.value = '';
+		controls.b_year.value = '';
+		controls.b_month.value = '';
+		controls.b_day.value = '';
+		controls.b_theme.value =  '';
+		controls.b_content.value = '';
+		controls.b_source.value = '';
+		controls.b_img.value = '';
+		
+		resDiv2.innerText = '<summary per_id="">\n  <theme/>\n  <company/>\n  <writer/>\n  <year/>\n <month/>\n <day/>\n <title/>\n  <contents_summary/>\n <source/>\n <pic/>\n</summary>' ;
+	}
+
+	function saveAppend()
+	{		
+		if (p_no.innerText=='?')  // 신규  
+		{
+			bnode = xdoc.createElement('summary');			
+			bnode.setAttribute('per_id','');
+			cnode = xdoc.createElement('theme');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('company');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('writer');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('year');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('month');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('day');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('title');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('contents_summary');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('source');
+			bnode.appendChild(cnode);
+			cnode = xdoc.createElement('pic');
+			bnode.appendChild(cnode);
+			
+			rootNode.appendChild(bnode);
+
+			page_no = page_sum;
+			page_sum++;
+			p_no.innerText=page_no+1;
+			p_sum.innerText=page_sum;
+		}
+
+
+
+		bnode = rootNode.childNodes(page_no);
+
+		bnode.setAttribute("per_id",controls.b_id.value);
+		bnode.childNodes(6).text = controls.b_title.value;
+		bnode.childNodes(2).text = controls.b_author.value;
+		bnode.childNodes(1).text = controls.b_company.value;
+
+		bnode.childNodes(3).text =controls.b_year.value;	
+		bnode.childNodes(4).text =controls.b_month.value;
+		bnode.childNodes(5).text = controls.b_day.value;
+		bnode.childNodes(0).text = controls.b_theme.value;
+
+		bnode.childNodes(7).text = controls.b_content.value;
+		bnode.childNodes(8).text = controls.b_source.value;
+		bnode.childNodes(9).text = controls.b_img.value;
+	
+
+		resDiv2.innerText = bnode.xml;
+
+	}
+	
+
+    function FileLoad1(filename)
+	{ 
+		var xdoc = new ActiveXObject("Msxml.DOMDocument");
+		xdoc.async = false;
+		xdoc.load(filename);
+		rootNode = xdoc.documentElement;
+		
+		if (xdoc.parseError.errorCode != 0)
+                    alert("파일을 메모리로 로드하는데 실패하였습니다 : " + xdoc.parseError.reason);
+
+		alert("[파일로드 성공] \n 파일이름은 "+ filename +"이고, \n 루트 엘리먼트 이름은 " + rootNode.nodeName + "입니다");
+	}
+
+	 function search(){
+            // var cb1=document.getElementById('chbox1');
+             var cb2=document.getElementById('chbox2');
+             var cb3=document.getElementById('chbox3');
+             var cb4=document.getElementById('chbox4');
+
+			resDiv2.innerText= '';
+
+
+//             if(cb1.checked==true&&cb2.checked!=true&&cb3.checked!=true&&cb4.checked!=true){
+  //               var alist=xdoc.getElementsByTagName("year");
+            //   var blist=xdoc.getElementsByTagName("month"); 
+              //   var clist=xdoc.getElementsByTagName("day");
+    //             for(i=0;i<alist.length;i++)
+    //                 if(alist.item(i).text==searchform.year.value){
+    //                     resDiv2.innerText += "\n\n"+xdoc.documentElement.childNodes[i].xml;}
+    //         }
+
+			 if(cb1.checked!=true&&cb2.checked==true&&cb3.checked!=true&&cb4.checked!=true){
+                 var tlist=xdoc.getElementsByTagName("theme");    
+                 for(i=0;i<tlist.length;i++)
+                     if(tlist.item(i).text==searchform.theme.value){
+                         resDiv2.innerText += "\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             
+             else if(cb1.checked!=true&&cb2.checked!=true&&cb3.checked==true&&cb4.checked!=true){
+                 var ilist=xdoc.getElementsByTagName("title");
+                 for(i=0;i<ilist.length;i++)
+                     if(ilist.item(i).text==searchform.title.value){
+                         resDiv2.innerText+="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else if(cb1.checked!=true&&cb2.checked!=true&&cb3.checked!=true&&cb4.checked==true){
+                 var clist=xdoc.getElementsByTagName("company");
+                 for(i=0;i<clist.length;i++)
+                     if(clist.item(i).text==searchform.company.value){
+                         resDiv2.innerText+="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else if(cb1.checked!=true&&cb2.checked==true&&cb3.checked==true&&cb4.checked!=true){
+                 var tlist=xdoc.getElementsByTagName("theme");
+                 var ilist=xdoc.getElementsByTagName("title");
+                 
+                 for(i=0;i<tlist.length;i++)
+                     if(tlist.item(i).text==searchform.theme.value&&ilist.item(i).text==searchform.title.value){
+                         resDiv2.innerText="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else if(cb1.checked!=true&&cb2.checked!=true&&cb3.checked==true&&cb4.checked==true){
+                 var ilist=xdoc.getElementsByTagName("title");
+                 var clist=xdoc.getElementsByTagName("company");
+                 
+                 for(i=0;i<ilist.length;i++)
+                     if(ilist.item(i).text==searchform.title.value&&clist.item(i).text==searchform.company.value){
+                         resDiv2.innerText="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else if(cb1.checked!=true&&cb2.checked==true&&cb3.checked!=true&&cb4.checked==true){
+                 var tlist=xdoc.getElementsByTagName("theme");
+                 var clist=xdoc.getElementsByTagName("company");
+                 
+                 for(i=0;i<tlist.length;i++)
+                     if(tlist.item(i).text==searchform.theme.value&&clist.item(i).text==searchform.company.value){
+                         resDiv2.innerText="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else if(cb1.checked!=true&&cb2.checked==true&&cb3.checked==true&&cb4.checked==true){
+                 var tlist=xdoc.getElementsByTagName("theme");
+                 var ilist=xdoc.getElementsByTagName("title");
+                 var clist=xdoc.getElementsByTagName("company");
+                 
+                 for(i=0;i<tlist.length;i++)
+                     if(tlist.item(i).text==searchform.theme.value&&ilist.item(i).text==searchform.title.value&&clist.item(i).text==searchform.company.value){
+                         resDiv2.innerText="\n\n"+xdoc.documentElement.childNodes[i].xml;}
+             }
+             else{
+                 result="검색 결과가 없습니다."
+                 resDiv2.innerText=result;
+             }
+             
+         }
+    
+	function preview(){
+		bnode = rootNode.childNodes(page_no);
+		link = controls.b_source.value;
+		var features = 'width=600,height=800,scrollbars=yes,toolbars=yes';
+		
+		window.open(link,'_blank',features);
+	}
+  </script>
+  <style type="text/css">
+	
+
+	.btn{
+	display:inline-block;
+    width:150px;
+    background-color: #f8585b;
+    border: none;
+    color:#fff;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+	border-radius:5px;
+	}
+
+	.btn:hover{
+    background-color: #489CFF;
+	}
+
+	.menutitle{
+	font-size:15pt;
+	text-align:center;
+	}
+
+	.tabmenu{
+	display:inline-block;
+    width:150px;
+    background-color: #6E6E6E;
+    border: none;
+    color:#fff;
+    padding: 14px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+	border-radius:5px 5px 0 0;	
+	margin:0px;
+	}
+
+	.tabmenu:hover{
+    background-color: #489CFF;
+	}
+
+  </style>
+ </head>
+ <body style="margin-top:50px;text-align:center;">
+	<p style="font-size:20pt;">웹응용 #5 개인과제</p>
+	
+	<!--뉴스보기 버튼-->
+	<table class="view" style="display:inline-block;">
+	<tr>
+		<td><input class="btn news1" type="button" value="뉴스1 CSS 출력" onClick="window.open('박영미news1.xml')"/></td>
+		<td><input class="btn news1" type="button" value="뉴스1 간단히 보기" onClick="window.open('박영미news1_simple.xml')" /></td>
+		<td><input class="btn news1" type="button" value="뉴스1 멋있게 보기" onClick="window.open('박영미news1_final.xml')"/></td>
+	</tr>
+	<tr>
+		<td><input class="btn news2" type="button" value="뉴스2 CSS 출력" onClick="window.open('박영미news2.xml')"/></td>
+		<td><input class="btn news2" type="button" value="뉴스2 간단히 보기" onClick="window.open('박영미news2_simple.xml')"/></td>
+		<td><input class="btn news2" type="button"  value="뉴스2 멋있게 보기" onClick="window.open('박영미news2_final.xml')"/></td>
+	</tr>
+	<tr>
+		<td><input class="btn" type="button" value="CSS 소스" onClick="window.open('news.css')"/></td>
+		<td><input class="btn" type="button" value="XSLT-1 소스" onClick="window.open('simple.xsl')"/></td>
+		<td><input class="btn" type="button"  value="XSLT-2 소스" onClick="window.open('final.xsl')"/></td>
+	</tr>
+  </table>
+	<p style="font-size:20pt;">웹응용 #6 개인과제</p>
+
+  <!--뉴스 검색/목록 편집기-->
+ <table id="search" cellspacing="0" style="display:inline-block;margin-bottom:50px;">
+            <tr></center>
+                <td  width="300" bgcolor="#e0edff" valign="top">
+                    <p class="menutitle">&nbsp;&nbsp;뉴스 검색</p>
+                    <div align="left">
+					<form id="searchform" method="get" width="300" style="border:2px solid;margin:5px;">
+						<p align="center">뉴스 검색 조건</p><p>&nbsp;&nbsp;<input id="chbox2" type="checkbox" value="theme">분야 : 
+						<select  name="theme"><option value="music">music</option>
+                                        <option value="animal" selected="">animal</option>
+                                        <option value="medical">medical</option>
+                                        <option value="movie">movie</option>
+                                        <option value="travel">travel</option>
+                                        <option value="weather">weather</option></select><br>
+						&nbsp;&nbsp;<input id="chbox3" type="checkbox" value="title">제목 : 
+						<input type="text" name="title" size="25"><br>
+				        &nbsp;&nbsp;<input id="chbox4" type="checkbox" value="company">신문사 : <input type="text" name="company"  size="23"><br>
+        <p align="center"><input type="button" value="뉴스 원문 검색" onclick="search()"></p>
+        </form></p>
+                    
+                    </div>
+                </td>
+
+
+                <td height="63"  bgcolor="#e9e0ff" >
+                    <div id="result2" align="left" style="margin-bottom:0px;">
+                    <br>&nbsp;&nbsp;
+					<input type="button" name="검색" class="tabmenu" value="전체뉴스 목록" onclick="FileLoad0();window.open('뉴스목록리스트.xml','_blank');">
+					<input onclick="FileLoad0();" class="tabmenu" type="button" value="뉴스 목록 가져오기">
+					<input onclick="newAppend();" class="tabmenu" type="button" value="뉴스 작성"></div>
+                    <table border="1" cellspacing="0" style="margin:0 5px 5px 5px;">
+						<tr style="visibility:gone;">
+							<form></form>
+						</tr>
+						<tr >
+                            <td style="width:400px;padding-left:20px" align="left" nowrap>        
+								<form id="controls" method="get">
+                                <p>뉴스번호 : <span id="p_no">0</span> (총 뉴스 개수 : <span id="p_sum">n</span>)</p>
+               &nbsp;<input onclick="goList(0)" type="button" value="|◀">&nbsp;&nbsp;<input onclick="goList(1)" type="button" value=" ◀ "> 
+                    &nbsp;<input onclick="goList(2)" type="button" value=" ▶ ">&nbsp; 
+                    <input onclick="goList(3)" type="button" value="▶|"> <br><br>
+뉴스 코드 : <input size="10" name="b_id" ><br><br>
+뉴스 제목 : <input size="46" name="b_title" ><br><br>
+신문사 : <input name="b_company" size="28">&nbsp;&nbsp; 
+분야 :<select  name="b_theme"><option value="music">music</option>
+                                        <option value="animal" selected="">animal</option>
+                                        <option value="medical">medical</option>
+                                        <option value="movie">movie</option>
+                                        <option value="travel">travel</option>
+                                        <option value="weather">weather</option></select><br><br>
+기자 : <input name="b_author" size="10">&nbsp;&nbsp;
+날짜 : <select id="b_year" name="b_date" size="1">
+                                        <option value="2015">2015</option>
+										<option value="2016">2016</option>
+										<option value="2017">2017</option>
+										<option value="2018">2018</option>
+										<option value="2019"selected="">2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option></select>년
+					<select id="b_month" name="b_date" size="1">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11" selected="">11</option>
+                                        <option value="12">12</option>                   
+										</select>월
+									<select id="b_day" name="b_date" size="1">
+                                        <option value="01"> 01  </option>
+                                        <option value="02"> 02  </option>
+                                        <option value="03"> 03  </option>
+                                        <option value="04"> 04  </option>
+                                        <option value="05"> 05  </option>
+                                        <option value="06"> 06  </option>
+                                        <option value="07"> 07  </option>
+                                        <option value="08"> 08  </option>
+                                        <option value="09"> 09  </option>
+                                        <option value="10"> 10  </option>
+                                        <option value="11"> 11  </option>
+                                        <option value="12"> 12  </option>
+										<option value="13"> 13  </option>
+                                        <option value="14"> 14  </option>
+                                        <option value="15"> 15  </option>
+                                        <option value="16"> 16  </option>
+										<option value="17"> 17  </option>
+                                        <option value="18"> 18  </option>
+                                        <option value="19"> 19  </option>
+                                        <option value="20"> 20  </option>
+                                        <option value="21"> 21  </option>
+                                        <option value="22"> 22  </option>
+										<option value="23"> 23  </option>
+                                        <option value="24"> 24  </option>
+                                        <option value="25"> 25  </option>
+                                        <option value="26"> 26  </option>
+                                        <option value="27"> 27  </option>
+                                        <option value="28"> 28  </option>
+                                        <option value="29"> 29  </option>
+                                        <option value="30"> 30  </option>
+                                        <option value="31"> 31  </option>
+                    </select>일 <br><br>내용 : <textarea style="width:340px;height:150px;resize:vertical;white-space:pre-line;padding:5px;font-family:helvetica"name="b_content"></textarea><br><br>
+					소스 : <input size="52" name="b_source" ><br><br>
+					이미지 링크 : <input size="44" name="b_img" ><br><br>
+					<input style="margin-left:240px;" onclick="saveAppend();" type="button" value=" 저 장 "> &nbsp;<input type="button" name="검색" value="미리보기" onclick="preview();"><br><br></form>
+                              </td>
+							<td style="width:450px;height420px;" >
+							<div id="resDiv2"style="width:450px;height:520px;resize:vertical;overflow:auto;"></div>
+							</td>
+						</tr>
+						</table>
+            </tr>
+        </table>
+
+</body>
+</html>

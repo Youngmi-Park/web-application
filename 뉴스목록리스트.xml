@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="simple2.xsl"?>
+  <news>
+	<summary per_id="t3_1"> 
+		<theme>music</theme>
+		<company>플레이디비</company>
+		<writer>박인아</writer>
+		<year>2019</year><month>08</month><day>13</day>
+		<title>'2019 렛츠락 페스티벌' 최종 라인업 공개 이승환,에픽하이, 이하이, 페퍼톤스 등 합류</title>
+		<contents_summary>오는 9월 21~22일 서울 난지 한강공원에서 열리는 '2019 렛츠락 페스티벌'이 13일 오전 공식 소셜 채널을 통해 최종 라인업을 발표했다. 데뷔 30주년을 맞이한 가수 이승환과 인기 힙합 그룹 에픽하이를 비롯해 이하이와 페퍼톤스가 합류 소식을 알렸다.이외에도성진환, 김지범과 김수영, 에이프릴 세컨드, 아디오스 오디오, 트위드가 최종 라인업에 포함돼 양일 총 42팀이 출연하게 됐다.
+		</contents_summary>
+		<source>http://mm.sookmyung.ac.kr/~it1810721/css_article01.xml</source>
+		<pic>http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/Magazine/2019/08/13_093633.jpg</pic>
+  </summary>
+  
+  <summary per_id="t3_2">
+    <theme >music</theme>
+	<company>법보신문</company>
+    <writer>김현태</writer>
+    <year>2019</year><month>08</month><day>27</day>
+	<title>혜민 스님 참여 명상심리 어플 '코끼리' 런칭</title>
+    <contents_summary>국민멘토 혜민 스님이 헤드티쳐로 참여한 명상심리 어플리케이션  '코끼리'가 8월25일 런칭했다.
+    어플리케이션 코끼리는  '편안한 마음의 숲' 을 슬로건으로 종교와는 상관없이 누구나 쉽고 편안하게 따라 할 수 있는 생활 명상 컨텐츠다. 
+        스마트폰을 통해 집에서 명상을 배우거나 심리수업 강좌를 들을 수 있는 모바일 앱서비스로, 해외 아티스트들이 작업한 힐링음악도 청취할 수 있다.
+        </contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1810721/css_article02.xml</source>
+    <pic>http://www.beopbo.com/news/photo/201908/206788_43387_1620.jpg</pic>
+  </summary>
+
+  <summary per_id="t_2123">
+    <theme >animal</theme>
+    <company>Hankyoreh</company>
+    <writer>신소윤</writer>
+    <year>2018</year><month>04</month><day>11</day>
+    <title>308만 마리의 비명… 동물실험 매년 증가 추세</title>
+    <contents_summary>
+      농림축산검역본부(검역본부)가 국내 동물실험시행기관의 2017년 
+      동물실험 및 실험동물 사용실태 조사를 한 결과, 실험동물 수가 
+      늘어난 것으로 밝혀졌다.
+    </contents_summary>
+    <source>http://ghkdssu.dothome.co.kr/web/article_01_simple.xml</source>
+    <pic>http://img.hani.co.kr/imgdb/resize/2018/0411/00501486_20180411.JPG</pic>
+  </summary>
+  
+  <summary per_id="t_128">
+    <theme >animal</theme>
+    <company>Kyunghyang</company>
+    <writer>김기범</writer>
+    <year>2019</year><month>01</month><day>17</day>
+    <title>반려/유기동물 안락사, 기준 없이 ‘밀어내기 살처분’ 일상화</title>
+    <contents_summary>
+      최근 동물보호단체 케어가 구조한 개들을 임의로 대량 살처분한 사실이 
+      드러나자 동물 안락사가 사회적 이슈로 떠올랐다. 그러나 시민들은 물론 
+      언론도 박소연 케어 대표의 비도덕적인 모습에 집중하느라, 동물 안락사 
+      자체에 대한 제대로 된 논의가 나오지 못하는 분위기다.
+    </contents_summary>
+    <source>http://ghkdssu.dothome.co.kr/web/article_02_simple.xml</source>
+    <pic>http://img.khan.co.kr/news/2019/01/17/l_2019011801002117700160692.jpg</pic>
+  </summary>
+    
+	<summary per_id="t4_1"> 
+      <theme>medical</theme>
+	  <company>의학신문</company>
+	  <writer>이재원</writer>
+      <year>2019</year><month>09</month><day>17</day>
+	  <title>알츠하이머, 재택 치료 길 열리나?</title>
+	  <contents_summary>알츠하이머, 재택 치료의 길 열릴 것으로 보고있다.
+전기자극 통한 초기 알츠하이머 치료 연구 결과 발표치매의 원인인 알츠하이머병을
+집에서도 치료할 수 있는 길이 열릴 전망이다.가톨릭대학교 인천성모병원 정용안·
+송인욱 교수팀은 집에서도 꾸준히 전기자극 치료를 할 경우 초기 알츠하이머병 환자의
+인지 및 언어기능 향상과 뇌의 포도당 대사를 증가시킨다는 사실을 발견했다고 최근 밝혔다.</contents_summary>
+      <source>http://yommi1121.dothome.co.kr/webprogramming/박영미news1.xml</source>
+      <pic>http://www.bosa.co.kr/news/photo/201909/2112436_152983_5557.jpg</pic>
+    </summary>    
+   
+	<summary per_id="t4_2">
+      <theme>medical</theme>
+	  <company>medipana</company>
+	  <writer>박민욱</writer>
+      <year>2019</year><month>09</month><day>17</day>
+      <title>병원계에 부는 인공지능 기반 '스마트병원' 바람</title>
+	  <contents_summary>스마트 수술실과 차트 없는 검 진 구현 공사단계부터 AI 시스템 구축.
+  현재 의료진들은 왓슨 컴퓨터 시스템으로 암환자의 처방과 치료 방법을 마련하고 있는데 정확도가 98%에 달한다는 보고가 나오고 있는 상황.
+  AI의 진화는 계속되어 이젠 처방뿐만이 아니라, 진료 검사예약, 차트 없는 검진, 병원 내 위치 찾기 등 환자들의 병원 이용에도 활용되고 있다.</contents_summary>
+      <source>http://yommi1121.dothome.co.kr/webprogramming/박영미news1.xml</source>
+      <pic>http://medipana.medipana.com/data/news_files/20199/20190917111927_ssoglvqy.jpg</pic>
+    </summary>
+	
+	<summary per_id="t9_1"> 
+    <theme>movie</theme>
+	<company>daum</company>
+	<writer>최지혜</writer>
+	<year>2019</year><month>09</month><day>18</day>
+    <title>개봉 20일만에 7만 관객 사로잡은 영화 벌새 </title>
+    <contents_summary>세상은 이상할 때가 너무나도 많다. 
+        이해하기 힘들고, 나 하나의 분노가 의미 없어 보이기도 한다. 
+        세상을 안다고 생각하지만 바로 옆에 있는 사람이 무슨 말을 할지, 나한테 어떤 상처를 줄지 전혀 예상하지 못하다 허를 찔리곤 한다. 
+        그럼에도 우리는 이 믿기 어려운 기이한 세상을 살아간다. 
+        단지 어떤 마음가짐으로 어떻게 살아갈지에 대한 고민이 사라지지 않을 뿐. </contents_summary>
+
+    <source>http://mm.sookmyung.ac.kr/~it1812776/hummingbird_css.xml</source>
+    <pic>https://t1.daumcdn.net/movie/e3a9301f840c4e28ace873c703ba1ba31567472822367</pic>
+  </summary>
+    
+  <summary per_id="t9_2">
+    <theme>movie</theme>
+      <company>스타뉴스 </company>
+      <writer>김미화</writer>
+      <year>2019</year><month>09</month><day>30</day>
+    <title>[리뷰] '메기' 낯설고 엉뚱한데 매력있네 </title>
+    <contents_summary>낯설다. 그런데 재밌다. 영화 <m_title>'메기'</m_title> (감독 이옥섭)는 단편 영화들을 얽어서 만든 것처럼 독특한 이야기들이 파편적으로 전개된다. 따로 떨어져 있는 것 같은 이야기들이 화자인 메기(진짜 물고기 메기)의 입을 통해 관객에게 전달되며 풀로 붙인듯 찰싹 붙어서 전개된다.</contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1812776/maggie_css.xml</source>
+    <pic>http://thumb.mtstarnews.com/06/2019/09/2019092608152467681_1.jpg</pic>
+  </summary>
+  
+ <summary per_id="t2_1">
+    <theme>travel</theme>
+    <company>일간스포츠</company>
+    <writer>이석희</writer>
+    <year>2017</year><month>08</month><day>23</day>
+    <title>이제 여행객들은 다구간 여행을 원한다 </title>
+    <contents_summary>제주항공(대표이사 최규남)이 자사 항공권 판매현황을 분석한 결과 해외 도착도시와 출발도시가 다른 이른바 다구간 여행 이용객수가 2014년 1만799명이었던 것이 2015년에는 3만213명, 2016년에는 5만6236명 등 연평균 128% 증가하고 있으며, 2017년 7월 현재 무려 5만185명이 이용한 것으로 나타났다</contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1814638/news/news1_css.xml</source>
+    <pic>http://photo.jtbc.joins.com/news/2017/08/23/20170823103402229.jpg</pic>
+  
+  </summary>
+  
+  <summary per_id="t2_2">
+    <theme >travel</theme>
+    <company>newsis</company>
+    <writer>홍찬선</writer>
+    <year>2019</year><month>09</month><day>16</day>
+    <title>'NO일본' 추석에도 안 식었다...출국 작년대비 반토막</title>
+    <contents_summary>올해 추석연휴(9월11~15일) 기간 일평균 17만9000명이 넘은 인파가 인천공항을 이용했지만, 전년(9월21~26일)보다 추석연휴가 짧은 탓에 전체 이용객은 다소 감소한 것으로 나타났다.</contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1814638/news/news2_css.xml</source>
+    <pic>http://image.newsis.com/2018/09/21/NISI20180921_0014485304_web.jpg?rnd=20180921081317</pic>
+      
+  </summary>
+
+<summary per_id="t7_1">
+    <theme>weather</theme>
+    
+    <company>youthdaily</company>
+    <writer>김두환</writer>
+    <year>2019</year><month>09</month><day>17</day>
+    <title>[오늘날씨] 전국 청명한 가을날씨... 미세먼지 '좋음'</title>
+    <contents_summary>화요일인 17일 전국에 청명한 가을 날씨가 예상된다.</contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1812658/xmlArticle/weather1_%b1%e8%b0%a1%c8%f1css.xml</source>
+    <pic>http://www.youthdaily.co.kr/data/photos/20190938/art_15686702076198_fdb54d.jpg</pic>
+    
+</summary>
+  
+    <summary per_id="t7_2">
+    <theme >weather</theme>  
+    
+    <company>kpinews</company>
+    <writer>김하영</writer>
+    <year>2019</year><month>09</month><day>17</day>
+    <title>[날씨] 전국 맑은 가을날씨...큰 일교차 '주의'</title>
+    <contents_summary>17일 오늘은 전국이 대체로 맑은 날씨를 보이겠다.</contents_summary>
+    <source>http://mm.sookmyung.ac.kr/~it1812658/xmlArticle/weather2_%b1%e8%b0%a1%c8%f1css.xml</source>
+    <pic>http://www.kpinews.co.kr/news/photo/201909/103393_64678_3922.jpg</pic>
+    
+  </summary>
+  </news>

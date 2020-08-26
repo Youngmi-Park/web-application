@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1614072 박영미</title>
+		<meta name="박영미" content=""/><meta name="설명" content="일러스트 포트폴리오 및 취미생활"/><meta name="keywords" content="소개,일러스트,영화,야구"/>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"/>
+
+		<link rel="stylesheet" href=".\css\maincss.css?ver=1" type="text/css"/>
+
+	</head>
+	<body>
+	<script type="text/javascript">
+	function showlist(i){
+	document.getElementById("food_list"+i).style.display = "block";
+	document.getElementById("showbtn"+i).style.display ="none";
+	}	
+		
+	function nolist(){
+	alert("더이상 표시할 게시물이 없습니다.");
+	}
+
+	function popup(i) {
+	document.getElementById('pop').style.visibility="visible";
+	popimg = document.getElementById("popimg");
+	var url = document.getElementById("food"+i).src;
+	popimg.innerHTML= "<img src='"+url+"' width ='30%' style=\"position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);\">";
+ 	}
+
+	function closepop(){
+	document.getElementById('pop').style.visibility = "hidden" ;
+ 	}
+
+</script>
+<!--nav bar-->
+		<nav>
+		<ul class="navbar">
+			<li><a href="index.html" class="navbutton mainmenu">MAIN</a></li>
+			<li><a href="index.html#about" class="navbutton mainmenu">ABOUT</a></li>
+			<li><a href="illustration.html" class="navbutton mainmenu">ILLUSTRATION</a></li>	
+			<li><a href="#" class="navbutton mainmenu">INTEREST</a>
+			<ul>
+				<li><a href="music.html" class="navbutton">MUSIC</a></li>
+				<li><a href="food.html" class="navbutton" >FOOD</a></li>
+			</ul>
+			</li>	
+			<li><a href="contact.html" class="navbutton mainmenu">CONTACT</a></li>
+		</ul>
+		</nav>
+
+<!--header-->
+		<span name="top"></span>
+		<header>
+		<div class="food">
+			<h1 class="title">FOOD</h1>			
+		</div>
+		</header>
+
+<!--Content-->
+
+		<div id="pop">
+			<img id="closebutton" src=".\image\closebutton.png"  class="pnt" onclick="closepop();"> 
+			<div id="popimg"></div>
+		</div>
+
+
+	<article class="food_content">
+	<div id="food_list1">
+			<ul>
+			<li><img class="foodimage" id="food1" src=".\image\food1.jpg" alt="족발" id="food1" onclick="popup('1');"></li>
+			<li><img class="foodimage" src=".\image\food2.jpg" alt="디저트"  id="food2" onclick="popup('2');"></li>
+			<li><img class="foodimage" src=".\image\food3.jpg" alt="녹차딸기설빙" id="food3" onclick="popup('3');"></li><br>
+			<li><img class="foodimage" src=".\image\food4.jpg" alt="회"  id="food4" onclick="popup('4');"></li>
+			<li><img class="foodimage" src=".\image\food5.jpg" alt="브런치" id="food5" onclick="popup('5');"></li>
+			<li><img class="foodimage" src=".\image\food6.jpg" alt="탕수육"  id="food6" onclick="popup('6');"></li>
+			</ul>
+			<button id="showbtn2" class="pnt" onclick="showlist('2');"><img class="morebutton" src=".\image\morebutton.png" width="50"></button>
+			</div>
+			
+			<div id="food_list2">
+			<ul>
+			<li><img class="foodimage" src=".\image\food7.jpg" alt="얼그레이티라미수" id="food7" onclick="popup('7');"></li>
+			<li><img class="foodimage" src=".\image\food8.jpg" alt="텐동" id="food8" onclick="popup('8');"></li>
+			<li><img class="foodimage" src=".\image\food9.jpg" alt="가정식"  id="food9" onclick="popup('9');"></li><br>
+			<li><img class="foodimage" src=".\image\food10.jpg" alt="빨봉분식"  id="food10" onclick="popup('10');"></li>
+			<li><img class="foodimage" src=".\image\food11.jpg"alt="육회"  id="food11" onclick="popup('11');"></li>
+			<li><img class="foodimage" src=".\image\food12.jpg"alt="피자"  id="food12" onclick="popup('12');"></li>
+			</ul>
+			<button id="showbtn3" class="pnt" onclick="showlist('3');"><img class="morebutton" src=".\image\morebutton.png" width="50"></button>
+			</div>
+			
+			<div id="food_list3">
+			<ul id>
+			<li><img class="foodimage" src=".\image\food13.jpg"alt="오므라이스" id="food13" onclick="popup('13');"></li>
+			<li><img class="foodimage" src=".\image\food14.jpg"alt="소고기" id="food14" onclick="popup('14');"></li>
+			<li><img class="foodimage" src=".\image\food15.jpg"alt="초코딸기설빙"  id="food15" onclick="popup('15');"></li><br>
+			<li><img class="foodimage" src=".\image\food16.jpg"alt="퀘사디아"  id="food16" onclick="popup('16');"></li>
+			<li><img class="foodimage" src=".\image\food17.jpg"alt="해물파전" id="food17" onclick="popup('17');"></li>
+			<li><img class="foodimage" src=".\image\food18.jpg"alt="뿌링클" id="food18" onclick="popup('18');"></li>
+			</ul>
+			<button id="showbtn4"  class="pnt" onclick="nolist();"><img class="morebutton" src=".\image\morebutton.png" width="50"</button>
+			</div>
+
+		</article>
+	<aside>
+			<a  href="#top"><img id="topbutton" src=".\image\topbutton.png" / ></a>	
+	</aside>	
+
+<!--section-->
+
+<!--footer-->
+
+		<footer>
+			<p>
+			<a href="https://www.instagram.com" target="_blank"><img class="sns" src=".\image\insta.png" width="30"/></a>
+			<a href="https://www.facebook.com" target="_blank"><img class="sns" src=".\image\fb.png" width="30"/></a>
+			<a href="https://www.twitter.com" target="_blank"><img class="sns" src=".\image\twit.png" width="30"/></a>
+			<a href="https://open.kakao.com/o/sTcdCmO" target="_blank"><img class="sns" src=".\image\kakao.png" width="30" id="kakao"/></a>
+			</p>
+			<p>YOMMI1121@2018 ALL RIGHTS RESERVED.</p>
+		
+		</footer>
+
+	</body>
+</html>

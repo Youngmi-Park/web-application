@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1614072 박영미</title>
+		<meta name="박영미" content=""/><meta name="설명" content="일러스트 포트폴리오 및 취미생활"/><meta name="keywords" content="소개,일러스트,영화,야구"/>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"/>
+
+		<link rel="stylesheet" href=".\css\maincss.css?ver=1" type="text/css"/>
+	</head>
+	<body>
+	<script type="text/javascript">
+/*체크박스 확인*/
+	function checkForm(){
+		var check = document.getElementById('info').checked;
+		var form = document.getElementById('contact_info');	
+
+		if(form.name.value == ""){
+		alert('이름을 입력해주세요.');
+		form.name.focus();
+		return false;
+		}
+		if(form.tel.value == ""){
+		alert('전화번호를 입력해주세요.');
+		form.name.focus();
+		return false;
+		}
+		if(form.mail.value == ""){
+		alert('이메일을 입력해주세요.');
+		form.name.focus();
+		return false;
+		}
+		if(form.message.value == ""){
+		alert('메시지를 입력해주세요.');
+		form.message.focus();
+		return false;
+		}
+		if(check == ""){
+		alert('개인정보제공에 동의해주세요.');
+		return false;
+		}
+
+		return true;
+		}
+	</script>
+	
+<!--nav bar-->
+		<nav>
+		<ul class="navbar">
+			<li><a href="index.html" class="navbutton mainmenu">MAIN</a></li>
+			<li><a href="index.html#about" class="navbutton mainmenu">ABOUT</a></li>
+			<li><a href="illustration.html" class="navbutton mainmenu">ILLUSTRATION</a></li>	
+			<li><a href="#" class="navbutton mainmenu">INTEREST</a>
+			<ul>
+				<li><a href="music.html" class="navbutton">MUSIC</a></li>
+				<li><a href="food.html" class="navbutton" >FOOD</a></li>
+			</ul>
+			</li>
+			<li><a href="contact.html" class="navbutton mainmenu">CONTACT</a></li>
+		</ul>
+		</nav>
+<!--header-->
+		<header>
+
+		<div class="main-page">
+			<h1 class="title">CONTACT</h1>
+		</div>
+
+		</header>
+
+
+
+
+<!--Content-->
+		<article id="contact">
+			<center>
+			<form id="contact_info" name="contact_info" action="contact.php" method="post" onsubmit="return checkForm();"  >	
+			    <div>
+			        <label for="name">이 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   름</label>
+			        <input type="text" id="name" name="name"/>
+				<select name="job" id="job" size="1">
+				<option value="student">-------------</option>
+				<option value="student">학생</option>
+				<option value="company">회사원</option>
+				<option value="teacher">교사</option>
+				<option value="sales">자영업</option>
+				<option value="others">기타</option>
+				</select>
+			    </div>
+			    <div>
+			        <label for="tel">전화번호</label>	
+			        <input type="tel" id="tel" name="tel" placeholder="000-0000-0000" pattern="010-[0-9]{4}-[0-9]{4}"/>
+			        <label for="mail" style="margin-left:20px;">E-MAIL</label>
+			        <input type="email" id="mail" name="mail" />
+			    </div>
+			    <div>
+ 			       <label for="message" id="msg">내  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 용</label><br>
+			        <textarea id="message" name="message"></textarea>
+			    </div>
+			<label class="pnt" id="infoagree"><input type="checkbox" value="agree" id="info" name="checkbox"/>개인정보 수집동의</label>		
+			
+        <!--체크박스 체크여부 확인-->
+		 <button type="submit"><img class="formbtn pnt" src=".\image\checkbutton.png" width="38px" height="38px"></button>
+		<button type="reset"><img class="formbtn pnt "src=".\image\resetbutton.png" width="40px" height="40px"></button>
+			</form>
+			
+			</center>	
+		</article>
+
+
+<!--section-->
+
+<!--footer-->
+		<footer>
+			<p>	
+			<a href="https://www.instagram.com" target="_blank"><img class="sns" src=".\image\insta.png" width="30"/></a>
+			<a href="https://www.facebook.com" target="_blank"><img class="sns" src=".\image\fb.png" width="30"/></a>
+			<a href="https://www.twitter.com" target="_blank"><img class="sns" src=".\image\twit.png" width="30"/></a>
+			<a href="https://open.kakao.com/o/sTcdCmO" target="_blank"><img style=class="sns" src=".\image\kakao.png" width="30" id="kakao"/></a>
+			</p>
+			<p>YOMMI1121@2018 ALL RIGHTS RESERVED.</p>
+		
+		</footer>
+
+	</body>
+</html>

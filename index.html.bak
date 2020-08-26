@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1614072 박영미</title>
+		<meta name="박영미" content=""/><meta name="설명" content="일러스트 포트폴리오 및 취미생활"/><meta name="keywords" content="소개,일러스트,영화,야구"/>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"/>
+
+		<link rel="stylesheet" href=".\css\maincss.css?ver=1" type="text/css"/>
+	</head>
+	<body>		
+
+	<script type="text/javascript">
+		function changeImage(index){
+		var mainImage=document.getElementById("main-pic")
+		var mainImageArray = ["mainphoto1.jpg","mainphoto2.jpg","mainphoto3.jpg","mainphoto4.jpg"];
+		mainImage.src = mainImageArray[index];
+
+		switch(index){
+		case "0": 
+		document.getElementById("intro").innerHTML = "<p style=\"text-align:right;\">Hello!<br>Welcome to my Homepage.</p>";
+		break;
+		case "1": 
+		document.getElementById("intro").innerHTML = "<p style=\"text-align:right;\">All About Me.</p>";
+		break;
+		case "2": 
+		document.getElementById("intro").innerHTML = "<p style=\"text-align:right;\">Livin' La Vida Loca</p>";
+		break;
+		case "3": 
+		document.getElementById("intro").innerHTML = "<p style=\"text-align:right;\">Carpe diem,<br>Quam minimum credula postero</p>";
+		break;
+		}
+		}	
+
+		window.addEventListener('scroll', function() {
+		 var el = document.querySelector('.show');
+ 		if(window.scrollY >= 500) el.classList.add('shown');
+  		else el.classList.remove('shown');
+		});
+	</script>
+<!--nav bar-->
+		<nav>
+		<ul class="navbar">
+			<li><a href="index.html" class="navbutton mainmenu">MAIN</a></li>
+			<li><a href="index.html#about" class="navbutton mainmenu">ABOUT</a></li>
+			<li><a href="illustration.html" class="navbutton mainmenu">ILLUSTRATION</a></li>	
+			<li><a href="#" class="navbutton mainmenu">INTEREST</a>
+			<ul>
+				<li><a href="music.html" class="navbutton">MUSIC</a></li>
+				<li><a href="food.html" class="navbutton" >FOOD</a></li>
+			</ul>
+			</li>
+			<li><a href="webprogramming.html" class="navbutton mainmenu">CODING</li>
+			<li><a href="contact.html" class="navbutton mainmenu">CONTACT</a></li>
+		</ul>
+		</nav>
+
+<!--header-->	<header id="header">
+		<p class="main-title" id="intro">Hello!<br>Welcome to my Homepage.</p>
+		<div class="main-page">
+			<img id="main-pic" src="mainphoto1.jpg"/>
+			<div class="changeImgBtn pnt" onclick="changeImage('0')"></div>
+			<div class="changeImgBtn pnt" onclick="changeImage('1')"></div>							
+			<div class="changeImgBtn pnt" onclick="changeImage('2')"></div>
+			<div class="changeImgBtn pnt" onclick="changeImage('3')"></div>
+		</div>
+
+		</header>
+				
+<!--Content-->
+		<span name="top"></span>
+		<div id ="about"></div>
+		<article>
+			<p class="title" style="font-size:25pt;font-weight:bold;">ABOUT ME</p>	
+			<p id="introduce"> 안녕하세요! 제 홈페이지에 오신 것을 환영합니다.<br>저는 22살 숙명여자대학교에 재학 중인 박영미입니다.<br>저의 전공은 생명시스템이고, IT공학을 복수전공하고 있습니다.<br> <br>이 홈페이지는 외주로 작업한 포토샵, 일러스트 등을 비롯해<br> 저의 취미생활을 소개하고 있습니다.
+</p>
+
+		</article>
+		<article>
+				<p id="ilike"><em style="font-weight:bold; font-size:15pt;">"I Like"</em></br><br/><span class="keyword">MUSIC / DRAWING / BASEBALL </span><br/><br>저는 평소에 음악듣는 것을 좋아합니다<br>등교할 때, 공부할 때, 심지어 집안 일을 할 때도<br>음악은 저와 떼어놓을 수 없는 존재입니다.<br>	
+, 또 저는 음악만큼 그림그리는 것을 좋아합니다.<br>손그림부터 그래픽프로그램을 이용한 그림까지<br>장르를 가리지않고 항상 시도합니다.<br>마지막으로 제가 좋아하는 것은 야구입니다.<br>어릴때부터 야구를 자주 보러다녔고<br>현재 제가 응원하는 팀은 NC다이노스입니다.</p>
+
+		</article>
+		<article>
+				<p id="goodat"><em style="font-weight:bold; font-size:15pt;">"I'm Good At"</em></br><br/><span class="keyword">PHOTOSHOP / ILLUSTRATION / CUBASE</span><br/><br/></p>
+
+	<div style="width:300px;margin:auto;text-align:left;">
+		<ul id="graph">
+			<span class="keyli" >Photoshop</span>
+			<li class="iGraph">
+			<span class="gBar"><span class="gAction" style="width:90%;float:left;"><span class="gPercent"><strong>90</strong>%</span></span></span>
+			</li>
+			<span class="keyli">Illustrator</span>	
+			<li class="iGraph">
+			<span class="gBar"><span class="gAction" style="width:85%;float:left;"><span class="gPercent"><strong>85</strong>%</span></span></span>
+			</li>
+			<span class="keyli">Cubase</span>
+			<li class="iGraph">
+			<span class="gBar"><span class="gAction" style="width:75%;float:left;"><span class="gPercent"><strong>75</strong>%</span></span></span>
+		
+			</li>
+		</ul>
+		</div>
+	</article>
+
+	<aside>
+			<a  href="#top"><img id="topbutton"  class="show" src=".\image\topbutton.png" / ></a>	
+	</aside>	
+
+<!--footer-->
+		<footer id="footer">
+			<p>	     	
+			<a href="https://www.instagram.com" target="_blank"><img class="sns" src=".\image\insta.png" width="30"/></a>
+			<a href="https://www.facebook.com" target="_blank"><img class="sns" src=".\image\fb.png" width="30"/></a>
+			<a href="https://www.twitter.com" target="_blank"><img class="sns" src=".\image\twit.png" width="30"/></a>
+			<a href="https://open.kakao.com/o/sTcdCmO" target="_blank"><img class="sns" src=".\image\kakao.png" width="30" id="kakao"/></a>
+			</p>
+			<p>YOMMI1121@2018 ALL RIGHTS RESERVED.</p>
+		
+		</footer>
+
+	</body>
+</html>

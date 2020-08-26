@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1614072 박영미</title>
+		<meta name="박영미" content=""/><meta name="설명" content="일러스트 포트폴리오 및 취미생활"/><meta name="keywords" content="소개,일러스트,영화,야구"/>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"/>
+
+		<link rel="stylesheet" href=".\css\maincss.css?ver=1" type="text/css"/>
+		<script type="text/javascript">
+
+		function popup(i) {
+		document.getElementById('pop').style.visibility="visible";
+		popimg = document.getElementById("popimg");
+		var url = document.getElementById("illustration"+i).src;
+		popimg.innerHTML= "<img src='"+url+"' width ='30%' style=\"position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);\">";
+ 		}
+
+		function closepop(){
+		document.getElementById('pop').style.visibility = "hidden" ;
+ 		}
+		window.addEventListener('scroll', function() {
+		 var el = document.querySelector('.show');
+  
+ 		if(window.scrollY >= 500) el.classList.add('shown');
+  		else el.classList.remove('shown');
+		});
+</script>
+	</head>
+	<body>
+<!--nav bar-->
+		<nav>
+		<ul class="navbar">
+			<li><a href="index.html" class="navbutton mainmenu">MAIN</a></li>
+			<li><a href="index.html#about" class="navbutton mainmenu">ABOUT</a></li>
+			<li><a href="illustration.html" class="navbutton mainmenu">ILLUSTRATION</a></li>	
+			<li><a href="#" class="navbutton mainmenu">INTEREST</a>
+			<ul>
+				<li><a href="music.html" class="navbutton">MUSIC</a></li>
+				<li><a href="food.html" class="navbutton" >FOOD</a></li>
+			</ul>
+			</li>
+			<li><a href="contact.html" class="navbutton mainmenu">CONTACT</a></li>
+		</ul>
+		</nav>
+
+<!--header-->
+		<header>
+		<div class="illustration">
+			<h1 class="title">ILLUSTRATION</h1>			
+		</div>
+		</header>
+
+<!--Content-->
+	<section>
+		<div id="pop">
+			<img id="closebutton" src=".\image\closebutton.png"  class="pnt" onclick="closepop();"> 
+			<div id="popimg"></div>
+		</div>
+	</section>
+	<section>
+		<article class="illustration_content">
+		<div id="food_list1">
+			<ul>
+			<li><img class="illustrationimage" id="illustration1" src=".\image\illustration1.jpg" id="illustration1" onclick="popup('1');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration2.jpg"  id="illustration2" onclick="popup('2');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration3.jpg"  id="illustration3" onclick="popup('3');"></li><br>
+			<li><img class="illustrationimage" src=".\image\illustration4.jpg"  id="illustration4" onclick="popup('4');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration5.jpg"  id="illustration5" onclick="popup('5');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration6.jpg"  id="illustration6" onclick="popup('6');"></li><br>
+			<li><img class="illustrationimage" src=".\image\illustration7.jpg"  id="illustration7" onclick="popup('7');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration8.jpg"   id="illustration8" onclick="popup('8');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration9.jpg"   id="illustration9" onclick="popup('9');"></li><br>
+			<li><img class="illustrationimage" src=".\image\illustration10.jpg"   id="illustration10" onclick="popup('10');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration11.jpg"   id="illustration11" onclick="popup('11');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration12.jpg"   id="illustration12" onclick="popup('12');"></li><br>
+			<li><img class="illustrationimage" src=".\image\illustration13.jpg"   id="illustration13" onclick="popup('13');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration14.jpg"   id="illustration14" onclick="popup('14');"></li>
+			<li><img class="illustrationimage" src=".\image\illustration15.jpg"   id="illustration15" onclick="popup('15');"></li>
+			</ul>
+			</div>
+		</article>
+		</section>
+
+
+	<aside>
+			<a  href="#top"><img id="topbutton"  class="show" src=".\image\topbutton.png" / ></a>	
+	</aside>	
+
+<!--footer-->
+		<footer>
+			<p>
+			<a href="https://www.instagram.com" target="_blank"><img class="sns" src=".\image\insta.png" width="30"/></a>
+			<a href="https://www.facebook.com" target="_blank"><img class="sns" src=".\image\fb.png" width="30"/></a>
+			<a href="https://www.twitter.com" target="_blank"><img class="sns" src=".\image\twit.png" width="30"/></a>
+			<a href="https://open.kakao.com/o/sTcdCmO" target="_blank"><img class="sns" src=".\image\kakao.png" width="30" id="kakao"/></a>
+			</p>
+			<p>Made by. Young Mi</p>
+		
+		</footer>
+
+	</body>
+</html>
