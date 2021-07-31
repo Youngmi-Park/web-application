@@ -4,4 +4,4 @@
 # 2019 웹 프로그래밍 응용 
 xml을 이용한 구조화
 
-~~link: http://yommi1121.dothome.co.kr/~~
+~~link: http://yommi1121.dothome.co.kr/ 닷홈 기간만료~~
